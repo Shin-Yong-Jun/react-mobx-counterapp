@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { observer } from 'mobx-react';
 
 function App(props) {
   
@@ -18,4 +19,4 @@ function App(props) {
   );
 }
 
-export default App;
+export default observer(App) ;
