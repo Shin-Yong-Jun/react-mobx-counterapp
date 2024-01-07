@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import counterStore from './countStore';
+import { CounterProvider } from './context/counterContext';
 
 
 // 여기서 store 인스턴스 생성
@@ -12,7 +13,9 @@ const store = new counterStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App myCounter={store}/>
+    <CounterProvider value={store}>
+      <App/>
+    </CounterProvider>
   </React.StrictMode>
 );
 
